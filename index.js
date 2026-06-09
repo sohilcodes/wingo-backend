@@ -22,7 +22,7 @@ app.use("/api/wallet", walletRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/aviator", aviatorRoutes);
 
-// ---------------- GAME ENGINE ----------------
+// ---------------- WINGO GAME ENGINE ----------------
 try {
   const { startGameLoop } = require("./controllers/gameEngine");
   if (typeof startGameLoop === "function") {
@@ -31,6 +31,15 @@ try {
   }
 } catch (err) {
   console.log("⚠️ Game engine error:", err.message);
+}
+
+// ---------------- AVIATOR ENGINE ----------------
+try {
+  const { runAviatorLoop } = require("./controllers/aviatorEngine");
+  runAviatorLoop();
+  console.log("✈️ Aviator loop started");
+} catch (err) {
+  console.log("⚠️ Aviator engine error:", err.message);
 }
 
 // ---------------- HEALTH ----------------
