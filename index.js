@@ -13,12 +13,14 @@ const gameRoutes = require("./routes/game.routes");
 const referRoutes = require("./routes/refer.routes");
 const walletRoutes = require("./routes/wallet.routes");
 const adminRoutes = require("./routes/admin.routes");
+const aviatorRoutes = require("./routes/aviator.routes");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/game", gameRoutes);
 app.use("/api/refer", referRoutes);
 app.use("/api/wallet", walletRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/aviator", aviatorRoutes);
 
 // ---------------- GAME ENGINE ----------------
 try {
